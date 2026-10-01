@@ -1,195 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Tour en catamarán a Isla Mujeres con Life's Tours. Solo 1200 MXN. Incluye snorkel, buffet, club de playa y barra libre. ¡Reserva tu aventura inolvidable!" />
-    <title>Life's Tours - Catamarán a Isla Mujeres ¡Tu Escape Épico!</title>
-    <link rel="stylesheet" href="estilo.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Comfortaa:wght@700&family=Lobster&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102f38">
+  <meta name="description" content="Life's Tours: experiencias en Cancún, Isla Mujeres y la Riviera Maya. Catamarán, Chichén Itzá, Tulum, Cozumel y más. Reserva por WhatsApp y paga el día del tour.">
+  <title>Life's Tours | Experiencias en el Caribe mexicano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
-    <header>
-        <div class="container nav-container">
-            <a href="#hero-section" class="logo-link">
-                <img src="imagen/LOGO.jpg" alt="Life's Tours Logo" class="logo-img">
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#hero-section">Inicio</a></li>
-                    <li><a href="#detalles-tour">La aventura</a></li>
-                    <li><a href="#video-tour">Video</a></li>
-                    <li><a href="#galeria">Fotos </a></li>
-                    <li><a href="#reserva">¡Reserva Ya!</a></li>
-                </ul>
-            </nav>
-            <button class="nav-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <section class="hero" id="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Isla Mujeres en Catamarán: ¡Tu Aventura MÁS TOP!</h1>
-            <p class="subtitle">Navega, explora y vive el paraíso caribeño con Life's Tours.</p>
-            <div class="hero-price-banner">
-                <span>Adultos: <strong>$1200 MXN</strong></span>
-                <span>Menores: <strong>$900 MXN</strong></span>
-            </div>
-            <a href="#reserva" class="cta-button hero-cta pulse">¡Quiero Mi Pase! <i class="fas fa-ticket-alt"></i></a>
-        </div>
-    </section>
-
-    <main class="container main-content">
-        <section id="detalles-tour" class="tour-details-section section-padding fade-in">
-            <h2>¿Qué Incluye tu Paseo al Paraíso?</h2>
-            <div class="features">
-                <div class="feature-item">
-                    <div class="feature-item-img-wrapper">
-                        <img src="imagen/catamaran.jpg" alt="Catamarán Life's Tours" loading="lazy"/>
-                    </div>
-                    <h3>Paseo en Catamarán</h3>
-                    <p>Rueda por las aguas turquesas, ¡pura buena vibra y icreibles!</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-item-img-wrapper">
-                        <img src="imagen/chapuzon.jpg" alt="Snorkel en arrecife" loading="lazy"/>
-                    </div>
-                    <h3>Snorkel con Guía</h3>
-                    <p>Sumérgete y descubre peces de colores con nuestro equipo y guía estrella.</p>
-                </div>
-                <div class="feature-item">
-                     <div class="feature-item-img-wrapper">
-                        <img src="imagen/chela.jpg" alt="Bebidas a bordo" loading="lazy"/>
-                    </div>
-                    <h3>Barra Libre</h3>
-                    <p>Refrescos, chelas y cocteles para que la sed no arruine la fiesta.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-item-img-wrapper">
-                        <img src="imagen/clubdeplaya.jpeg" alt="Club de playa en Isla Mujeres" loading="lazy"/>
-                    </div>
-                    <h3>Acceso a Club de Playa</h3>
-                    <p>Relájate en camastros, refréscate en la alberca y disfruta del ambiente.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-item-img-wrapper">
-                        <img src="imagen/comida1.jpeg" alt="Buffet delicioso" loading="lazy"/>
-                    </div>
-                    <h3>Comida Buffet</h3>
-                    <p>Platillos variados para recargar pilas después de la aventura.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-item-img-wrapper">
-                         <img src="imagen/fotoisla.jpg" alt="Tiempo libre en Isla Mujeres" loading="lazy"/>
-                    </div>
-                    <h3>Tiempo Libre en ISLA MUJERES </h3>
-                    <p>Explora el centro, compra recuerditos o tómate la selfie perfecta.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="info-extra-section section-padding fade-in">
-                        <div class="info-box horarios">
-                <h3><i class="fas fa-clock inline-icon-fa"></i> Horarios y Salida ¡PUNTUALES!</h3>
-                <p><strong>Salidas Diarias:</strong> 10:00 AM y 12:00 PM</p>
-                <p>
-                    <strong>Punto de Encuentro:</strong> Marina Imperial Las Perlas (¡No llegues tarde!)<br>
-                    <a href="https://maps.app.goo.gl/tumBVTHK7RDpsJz2A" target="_blank" rel="noopener noreferrer" class="map-link">
-                        <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
-                    </a>
-                </p>
-                <div class="reserva-flexible">
-                    <i class="fas fa-hand-holding-usd inline-icon-fa large-icon-fa"></i>
-                    <p>¡RESERVA HOY MISMO!</p>
-                    <span>Y PAGA EL DÍA DEL TOUR</span>
-                </div>
-            </div>
-            </div>
-            <div class="info-box no-incluye">
-                <h3><i class="fas fa-times-circle inline-icon-fa"></i> Ojo: Esto NO Viene Incluido</h3>
-                <ul>
-                    <li>Transporte desde tu hotel (+$250 MXN p/p, ¡tú decides!).</li>
-                    <li>Souvenirs y fotitos PRO (¡llévate un recuerdo!).</li>
-                    <li>Propinas para el equipo (¡si te la pasaste increible!).</li>
-                    <li>Estacionamiento en la marina (por si llegas en coche).</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="video-tour" class="video-section section-padding fade-in">
-            <h2>¡Mira un Poco de la aventura que te Espera!</h2>
-            <div class="video-wrapper">
-                <video controls autoplay muted loop playsinline poster="imagen/fiesta.jpg" class="main-video">
-                    <source src="imagen/video1.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video. Puedes descargar el video <a href="imagen/video1.mp4">aquí</a>.
-                </video>
-            </div>
-            <p class="video-caption">Spoiler: ¡Te va a encantar!</p>
-
-            <h3 class="sub-heading-videos">Más Vistazos del PARAÍSO </h3>
-            <div class="video-wrapper youtube-video-wrapper">
-                 <iframe
-                    src="https://www.youtube.com/embed/YNiMthrQ54A?autoplay=0&mute=1&loop=1&playlist=YNiMthrQ54A&modestbranding=1&rel=0&iv_load_policy=3&controls=1"
-                    title="Video Catamarán Isla Mujeres de YouTube"
-                    frameborder="0"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen loading="lazy">
-                </iframe>
-            </div>
-        </section>
-
-        <section id="reserva" class="booking-section section-padding fade-in">
-            <h2>¿LISTO para la Mejor Aventura de tu Vida?</h2>
-            <div class="price-box">
-                <p class="price-tag">Adultos: <span>$1200 MXN</span></p>
-                <p class="price-tag">Menores: <span>$900 MXN</span></p>
-                <p class="price-details">(Impuestos de muelle YA incluidos, ¡sin sorpresas!)</p>
-                <p class="price-highlight">¡No te quedes fuera! Reserva hoy y paga al abordar.</p>
-            </div>
-            <div class="booking-info">
-                <h3>¡Aparta tu Lugar AHORA! Es súper fácil:</h3>
-                <a href="https://wa.me/529982930766?text=¡Hola%20Life's%20Tours!%20Quiero%20reservar%20el%20tour%20a%20Isla%20Mujeres%20para%20[#]%20adultos%20y%20[#]%20menores%20el%20[FECHA]%20a%20las%20[HORA].%20¡Gracias!" target="_blank" rel="noopener" class="cta-button whatsapp">
-                    <i class="fab fa-whatsapp social-icon"></i> WhatsApp Directo
-                </a>
-                <a href="tel:+529982930766" class="cta-button phone">
-                    <i class="fas fa-phone-alt social-icon"></i> Llámanos: 998 293 0766
-                </a>
-                <p class="booking-note">¡Te esperamos para una experiencia INOLVIDABLE!</p>
-            </div>
-        </section>
-
-        <section id="galeria" class="gallery-section section-padding fade-in">
-            <h2>Galería: ¡Momentos que NO olvidarás!</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="imagen/catamarandelejos.jpeg" alt="Catamarán navegando en el Caribe" loading="lazy"/></div>
-                <div class="gallery-item"><img src="imagen/fiesta.jpeg" alt="Fiesta y diversión a bordo" loading="lazy"/></div>
-                <div class="gallery-item"><img src="imagen/baile.jpg" alt="Bailando en el catamarán" loading="lazy"/></div>
-                <div class="gallery-item"><img src="imagen/comida2.jpeg" alt="Buffet variado y delicioso" loading="lazy"/></div>
-                <div class="gallery-item"><img src="imagen/seapassion1.jpg" alt="Vista del catamarán Sea Passion" loading="lazy"/></div>
-                <div class="gallery-item"><img src="imagen/1.jpeg" alt="Ambiente relajado en Isla Mujeres" loading="lazy"/></div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <img src="imagen/LOGO.jpg" alt="Life's Tours Footer Logo" class="footer-logo-img" loading="lazy">
-            <p class="footer-tagline">Life's Tours © <span id="currentYear"></span> | ¡Vive la Aventura al Máximo!</p>
-            <div class="footer-socials">
-                <a href="https://wa.me/529982930766?text=Info%20Life's%20Tours" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/529982930766?text=¡Hola%20Life's%20Tours!%20Quiero%20reservar%20el%20tour%20a%20Isla%20Mujeres" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<header class="header">
+  <a class="wordmark" href="#inicio" aria-label="Life's Tours, inicio"><span>Life’s</span><small>TOURS</small></a>
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">Menú <span>☰</span></button>
+  <nav class="nav" aria-label="Navegación principal"><a href="#experiencias">Experiencias</a><a href="#plus">Plus Experiencia</a><a href="#resenas">Reseñas</a><a href="#como-reservar">Cómo reservar</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/lifestours/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/Lifesotours" target="_blank" rel="noopener">Facebook ↗</a></nav>
+  <a class="header-cta" href="https://wa.me/529982930766?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20tours%20de%20Life%27s%20Tours" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-shade"></div>
+  <div class="hero-inner"><span class="eyebrow light">CANCÚN · ISLA MUJERES · RIVIERA MAYA</span><h1>El Caribe se vive <em>de cerca.</em></h1><p>Descubre el mar, la cultura y los lugares que hacen inolvidable cada viaje. Nosotros te ayudamos a elegir y reservar la experiencia ideal.</p><div class="hero-actions"><a class="button button-light" href="#experiencias">Explorar experiencias</a><a class="text-link" href="#como-reservar">Así funciona la reserva <span aria-hidden="true">↗</span></a></div></div>
+  <div class="hero-side">LIFE’S TOURS <span>✦</span> CANCÚN</div>
+</section>
+<div class="promise"><span>Atención personalizada</span><span>Opciones para familias y adultos</span><span>Reserva hoy, paga el día del tour*</span></div>
+<section class="social-proof section-shell"><div><span class="eyebrow">CONOCE A LIFE’S TOURS</span><h2>Historias de quienes ya viajaron.</h2><p>Lee las reseñas de nuestros viajeros en Facebook y descubre más fotos y experiencias en Instagram.</p></div><div class="social-proof-links"><a class="button button-dark" href="https://web.facebook.com/Lifesotours/reviews" target="_blank" rel="noopener">Ver reseñas en Facebook ↗</a><a class="social-instagram" href="https://www.instagram.com/lifestours/" target="_blank" rel="noopener">Descubre nuestro Instagram ↗</a></div></section><section class="intro section-shell"><div><span class="eyebrow">VIAJA A TU MANERA</span><h2>Experiencias para cada forma de descubrir el Caribe.</h2></div><p>Un día navegando hacia Isla Mujeres, un recorrido por la historia maya o una escapada junto al mar. Cuéntanos tus fechas y te ayudamos a encontrar la mejor opción.</p></section>
+<section class="catalog section-shell" id="experiencias"><div class="section-head"><div><span class="eyebrow">NUESTRAS EXPERIENCIAS</span><h2>Elige tu próximo recuerdo</h2></div><p>Tarifas sujetas a fecha, disponibilidad, edad y lugar de salida. Confirma el total al reservar.</p></div><div class="cards" id="cards"></div></section>
+<section class="feature section-shell" id="plus"><div class="feature-visual"><img src="imagen/catamaran.jpg" alt="Catamarán navegando en el Caribe" loading="lazy"><span class="image-note">ISLA MUJERES · PLAN FAMILIAR</span></div><div class="feature-copy"><span class="eyebrow">EXPERIENCIA DESTACADA</span><h2>Plus Experiencia <em>Familiar</em></h2><p>Un día para compartir Isla Mujeres en catamarán: mar turquesa, snorkel si el clima lo permite, tiempo libre, buffet, bebidas y acceso a club de playa.</p><ul><li>Duración aproximada de 6 horas y media</li><li>Salidas desde Cancún; consulta horarios disponibles</li><li>Sin transporte: adultos (12 años en adelante) $850 MXN y menores (5 a 11 años) $450 MXN</li><li>Con transporte: adultos $1,100 MXN y menores $700 MXN</li><li>Infantes de 0 a 4 años gratis, también con transporte</li></ul><a class="button button-dark" id="plus-link" href="#contacto">Cotizar experiencia familiar</a><small>El club de playa y las actividades pueden variar por operación y clima. Confirma el precio final al reservar.</small></div></section>
+<section class="steps" id="como-reservar"><div class="section-shell"><span class="eyebrow light">RESERVAR ES SENCILLO</span><h2>Tu viaje empieza con un mensaje.</h2><div class="step-grid"><div><b>01</b><h3>Elige tu experiencia</h3><p>Dinos qué tour te interesa, fecha y cuántas personas viajan.</p></div><div><b>02</b><h3>Confirma los detalles</h3><p>Te compartimos disponibilidad, tarifa final, punto de encuentro e inclusiones.</p></div><div><b>03</b><h3>Disfruta el día</h3><p>Recibe tu confirmación y paga el día de la actividad según las condiciones de tu reserva.</p></div></div></div></section>
+<section class="reviews section-shell" id="resenas"><div class="section-head"><div><span class="eyebrow">VOCES DE VIAJEROS</span><h2>La experiencia, en sus palabras.</h2></div><p>Comentarios y fotos compartidos por quienes viajaron con Life’s Tours. Las reseñas se revisan antes de publicarse.</p></div><div class="reviews-layout"><div><div id="reviews-list" class="reviews-list" aria-live="polite"><p class="reviews-empty">Cargando reseñas…</p></div></div><div class="review-panel"><h3>Cuéntanos cómo te fue</h3><p>Tu reseña y fotos aparecerán aquí después de revisarlas. Comparte tu experiencia sin incluir teléfonos ni datos personales.</p><form id="review-form"><label for="review-name">Tu nombre</label><input id="review-name" name="name" type="text" maxlength="60" minlength="2" autocomplete="name" required><label for="review-tour">Experiencia</label><select id="review-tour" name="tour" required><option value="">Selecciona un tour</option><option>Isla Mujeres Familiar</option><option>Isla Mujeres Solo Adultos</option><option>Chichén Itzá</option><option>Tulum</option><option>El Cielo, Cozumel</option><option>Coco Bongo</option><option>Isla Contoy e Isla Mujeres</option></select><label for="review-rating">Calificación</label><select id="review-rating" name="rating" required><option value="">Selecciona</option><option value="5">5 estrellas</option><option value="4">4 estrellas</option><option value="3">3 estrellas</option><option value="2">2 estrellas</option><option value="1">1 estrella</option></select><label for="review-comment">Tu comentario</label><textarea id="review-comment" name="comment" minlength="15" maxlength="1000" rows="5" placeholder="¿Qué fue lo que más disfrutaste?" required></textarea><label for="review-photo">Fotos de tu experiencia (opcional)</label><input id="review-photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" multiple><small class="photo-help">Hasta 5 fotos JPG, PNG o WebP, de máximo 8 MB cada una. Las reduciremos para publicarlas.</small><div class="review-trap" aria-hidden="true"><label for="review-website">Sitio web</label><input id="review-website" name="website" tabindex="-1" autocomplete="off"></div><button class="button button-dark" type="submit">Enviar reseña</button><p id="review-status" class="review-status" role="status"></p></form></div></div></section>
+<section class="faq section-shell"><div><span class="eyebrow">ANTES DE VIAJAR</span><h2>Lo que conviene saber</h2></div><div class="faq-list"><details><summary>¿Qué edades cuentan como menor o adulto?</summary><p>En Isla Mujeres Familiar, los infantes de 0 a 4 años van gratis, los menores son de 5 a 11 años y la tarifa de adulto aplica desde los 12 años. El tour Solo Adultos es para personas de 18 años en adelante.</p></details><details><summary>¿Dónde sale el catamarán a Isla Mujeres?</summary><p>Desde Cancún. El punto de encuentro es en la zona del Hotel Imperial Las Perlas; te enviamos la ubicación e indicaciones exactas al confirmar.</p></details><details><summary>¿El transporte está incluido?</summary><p>En el tour familiar es opcional: con transporte cuesta $1,100 MXN por adulto y $700 MXN por menor de 5 a 11 años. Los infantes de 0 a 4 años van gratis. Confirma tu zona de recogida al reservar.</p></details><details><summary>¿Qué pasa si el clima afecta el snorkel?</summary><p>La actividad de snorkel depende de las condiciones del mar y las indicaciones del operador para la seguridad de los pasajeros.</p></details><details><summary>¿Puedo pagar el día del tour?</summary><p>En las experiencias elegibles, sí. Confirma por WhatsApp la forma de pago y las condiciones particulares de tu recorrido.</p></details></div></section>
+<section class="closing" id="contacto"><div class="section-shell closing-inner"><div><span class="eyebrow light">HABLEMOS DE TU VIAJE</span><h2>Hay un Caribe esperando por ti.</h2><p>Escríbenos con tu fecha, número de viajeros y experiencia favorita. Te responderemos con opciones y precio final.</p></div><div class="contact-buttons"><a class="button button-light" href="https://wa.me/529982930766?text=Hola%20Life%27s%20Tours%2C%20quiero%20cotizar%20una%20experiencia." target="_blank" rel="noopener">WhatsApp 998 293 0766</a><a class="button button-outline" href="https://wa.me/529995404368?text=Hola%20Life%27s%20Tours%2C%20quiero%20cotizar%20una%20experiencia." target="_blank" rel="noopener">WhatsApp 999 540 4368</a></div></div></section>
+</main>
+<footer><div class="section-shell footer-inner"><div class="wordmark"><span>Life’s</span><small>TOURS</small></div><p>Experiencias en Cancún y la Riviera Maya.<br><small>*Condiciones de pago y disponibilidad sujetas a cada tour.</small></p><div><a href="https://www.instagram.com/lifestours/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/Lifesotours" target="_blank" rel="noopener">Facebook ↗</a><a href="https://wa.me/529982930766" target="_blank" rel="noopener">998 293 0766 ↗</a><a href="https://wa.me/529995404368" target="_blank" rel="noopener">999 540 4368 ↗</a></div><small>© <span id="year"></span> Life’s Tours</small></div></footer>
+<script src="script.js"></script>
+<script src="reviews-config.js"></script>
+<script src="reviews.js"></script>
+</body></html>

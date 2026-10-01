@@ -1,86 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-    // --- Menú Hamburguesa para Móvil ---
-    const navToggle = document.querySelector('.nav-toggle');
-    const mainNav = document.querySelector('.main-nav');
-
-    if (navToggle && mainNav) {
-        navToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-            // Cambiar icono de hamburguesa a X y viceversa
-            const icon = navToggle.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-                navToggle.setAttribute('aria-label', 'Cerrar menú');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-                navToggle.setAttribute('aria-label', 'Abrir menú');
-            }
-        });
-
-        // Cerrar menú móvil al hacer clic en un enlace
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    const icon = navToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    navToggle.setAttribute('aria-label', 'Abrir menú');
-                }
-            });
-        });
-    }
-
-
-    // --- Smooth Scroll para enlaces del menú (y otros con href="#...") ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const hrefAttribute = this.getAttribute('href');
-            // Asegurarse de que el href no sea solo "#" o que el elemento exista
-            if (hrefAttribute.length > 1 && document.querySelector(hrefAttribute)) {
-                e.preventDefault();
-                document.querySelector(hrefAttribute).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-
-    // --- Efecto Fade-in para Secciones al Hacer Scroll ---
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // 10% del elemento visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Opcional: dejar de observar el elemento una vez que es visible
-                // observer.unobserve(entry.target);
-            } else {
-                // Opcional: si quieres que el efecto se repita al salir y volver a entrar
-                // entry.target.classList.remove('visible');
-            }
-        });
-    }, observerOptions);
-
-    fadeInElements.forEach(el => {
-        observer.observe(el);
-    });
-
-    // --- Actualizar año en el footer ---
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
-
-});
+// Edita estas tarifas aquí cuando cambien. Usa null para mostrar «Cotizar».
+const tours = [
+  {slug:'isla-familiar',name:'Isla Mujeres Familiar', tag:'CATAMARÁN · FAMILIAR', description:'Navegación, snorkel sujeto al clima, buffet, barra libre, club de playa y tiempo libre. Infantes de 0 a 4 años gratis; menores de 5 a 11; adultos desde los 12. Transporte opcional.', price:'Adulto $850 MXN · menor $450 MXN', image:'imagen/todosbarcos.jpg', alt:'Catamaranes en el mar de Cancún'},
+  {slug:'isla-adultos',name:'Isla Mujeres Solo Adultos', tag:'CATAMARÁN · 18+', description:'Ambiente de fiesta para personas de 18 años en adelante, con navegación, música, bebidas, buffet, snorkel sujeto al clima y tiempo libre en la isla. Transporte opcional.', price:'$900 MXN por persona', image:'imagen/fiesta.jpeg', alt:'Ambiente a bordo del catamarán'},
+  {slug:'chichen-itza',name:'Chichén Itzá y dos cenotes', tag:'CULTURA · YUCATÁN', description:'Chichén Itzá, Yunchen, Xkokay, Valladolid y comida regional. Clásico, Plus o Deluxe.', price:'Nacionales desde $880 MXN', image:'imagen/chichen-piramide.jpeg'},
+  {slug:'tulum',name:'Tulum y Cobá 5 en 1', tag:'CULTURA · CENOTES', description:'Tulum, Cobá, dos cenotes y Puerto Morelos. Elige Clásico o Deluxe.', price:'Nacionales desde $1,150 MXN', image:'imagen/tulum-cenote-caverna.jpeg'},
+  {slug:'el-cielo',name:'El Cielo, Cozumel', tag:'MAR · COZUMEL', description:'Snorkel, El Cielo y El Cielito. Sal desde Playa del Carmen o con transporte desde Cancún.', price:'Desde $800 MXN + ferry', image:'imagen/cielo-barco-mar.jpeg'},
+  {slug:'coco-bongo',name:'Coco Bongo Playa del Carmen', tag:'ESPECTÁCULO · NOCHE', description:'Show, barra libre y opciones Regular, Premium y asientos preferentes. Tarifas por día.', price:'Regular desde $90 USD · promo local $650 MXN', image:'imagen/cocobongo-promo-local.jpeg'},
+  {slug:'isla-contoy',name:'Isla Contoy e Isla Mujeres',tag:'NATURALEZA · CARIBE',description:'Dos islas, snorkel, desayuno, buffet y barra libre. Ocho horas con transporte e impuestos incluidos.',price:'Adultos $2,100 MXN',image:'imagen/contoy-playa.jpeg',alt:'Playa de Isla Contoy'},
+  {name:'Más experiencias', tag:'VIAJA A TU MANERA', description:'Cuéntanos qué tipo de paseo buscas y te ayudamos a revisar las opciones disponibles para tus fechas.', price:null, image:null}
+];
+const cards=document.querySelector('#cards');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const wa=name=>'https://wa.me/529982930766?text='+encodeURIComponent(`Hola Life's Tours, quiero cotizar ${name}. Fecha: [fecha]. Viajeros: [adultos y menores]. ¿Incluye transporte? [sí/no].`);
+cards.innerHTML=tours.map((t,i)=>{const href=t.slug?`tour.html?id=${encodeURIComponent(t.slug)}`:wa(t.name);return `<a class="card card-link" href="${href}" ${t.slug?'':'target="_blank" rel="noopener"'} aria-label="${t.slug?'Ver detalles de':'Consultar'} ${esc(t.name)}"><div class="card-media ${t.image?'has-image':''}">${t.image?`<img src="${esc(t.image)}" alt="${esc(t.alt)}" loading="lazy">`:`<span aria-hidden="true">${['✦','◒','✧','≈','✳','☼'][i]}</span>`}<small>0${i+1}</small></div><div class="card-body"><span class="eyebrow">${esc(t.tag)}</span><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p><div class="card-bottom"><strong>${esc(t.price||'Precio a consultar')}</strong><span class="card-action">${t.slug?'Ver experiencia':'Consultar'} <span aria-hidden="true">↗</span></span></div></div></a>`}).join('');
+document.querySelector('#plus-link').href=wa('Plus Experiencia Familiar en catamarán');
+document.querySelector('#year').textContent=new Date().getFullYear();
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
+nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}});
