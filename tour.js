@@ -148,18 +148,18 @@ const tourData = {
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const photoSrc = value => typeof value === 'string' ? value : value.src;
 const credit = value => typeof value === 'string' ? '' : `<a href="${escapeHTML(value.source)}" target="_blank" rel="noopener">Foto: ${escapeHTML(value.credit)} ↗</a>`;
-const id = new URLSearchParams(location.search).get('id');
+const id = document.body.dataset.tourId || new URLSearchParams(location.search).get('id');
 const tour = tourData[id];
 const main = document.querySelector('#tour-main');
 if (!tour) {
   document.title = 'Experiencia no encontrada | Life’s Tours';
-  main.innerHTML = '<section class="section-shell tour-missing"><h1>No encontramos esta experiencia.</h1><p>Explora los recorridos disponibles.</p><a class="button button-dark" href="index.html#experiencias">Ver experiencias</a></section>';
+  main.innerHTML = '<section class="section-shell tour-missing"><h1>No encontramos esta experiencia.</h1><p>Explora los recorridos disponibles.</p><a class="button button-dark" href="/#experiencias">Ver experiencias</a></section>';
 } else {
   document.title = `${tour.title} | Life’s Tours`;
   const message = encodeURIComponent(`Hola Life's Tours, quiero reservar ${tour.title}. Fecha: [fecha]. Personas: [adultos y menores]. ¿Hay disponibilidad?`);
   const whatsapp = number => `https://wa.me/52${number}?text=${message}`;
   main.innerHTML = `
-    <section class="tour-hero"><img src="${escapeHTML(photoSrc(tour.cover))}" alt="${escapeHTML(tour.coverAlt)}"><div class="tour-hero-shade"></div><div class="section-shell tour-hero-content"><a class="tour-back" href="index.html#experiencias">← Todas las experiencias</a><span class="eyebrow light">${escapeHTML(tour.label)}</span><h1>${escapeHTML(tour.title)}</h1><p>${escapeHTML(tour.intro)}</p><a class="button button-light" href="#descubre">Descubre la experiencia</a></div><div class="tour-hero-credit">${credit(tour.cover)}</div></section>
+    <section class="tour-hero"><img src="${escapeHTML(photoSrc(tour.cover))}" alt="${escapeHTML(tour.coverAlt)}"><div class="tour-hero-shade"></div><div class="section-shell tour-hero-content"><a class="tour-back" href="/#experiencias">← Todas las experiencias</a><span class="eyebrow light">${escapeHTML(tour.label)}</span><h1>${escapeHTML(tour.title)}</h1><p>${escapeHTML(tour.intro)}</p><a class="button button-light" href="#descubre">Descubre la experiencia</a></div><div class="tour-hero-credit">${credit(tour.cover)}</div></section>
     <div class="tour-strip section-shell"><strong>${escapeHTML(tour.price)}</strong><span>Reserva por WhatsApp · paga el día del tour según condiciones</span></div>
     <section class="section-shell tour-overview" id="descubre"><div><span class="eyebrow">LA EXPERIENCIA</span><h2>${escapeHTML(tour.lead)}</h2><p>${escapeHTML(tour.body)}</p></div><ul>${tour.facts.map(f=>`<li>${escapeHTML(f)}</li>`).join('')}</ul></section>
     ${tour.packages ? `<section class="section-shell tour-packages"><span class="eyebrow">ELIGE TU EXPERIENCIA</span><h2>${id==='chichen-itza'?'Tres formas de explorar.':'Clásico o Deluxe.'}</h2><p>${escapeHTML(tour.packageIntro || 'Ambos incluyen Cobá, Tulum, dos cenotes, Puerto Morelos, buffet regional, transporte, guía certificado y sombrilla.')}</p><div class="package-grid">${tour.packages.map(pkg=>`<article class="package-card"><h3>${escapeHTML(pkg.name)}</h3>${pkg.nationalAdult ? `<div class="package-prices"><strong>Nacionales</strong><span>Adultos ${escapeHTML(pkg.nationalAdult)}</span><span>Menores ${escapeHTML(pkg.nationalChild)}</span><strong>Extranjeros</strong><span>Adultos ${escapeHTML(pkg.foreignAdult)}</span><span>Menores ${escapeHTML(pkg.foreignChild)}</span></div>` : ''}<p>${escapeHTML(pkg.extras)}</p></article>`).join('')}</div><p class="package-discount">${escapeHTML(tour.packageNote || 'Nacionales: 10% los domingos · Segundo tour: 5% para nacionales y extranjeros · Segundo tour en domingo: 15%. Presenta INE para tarifa nacional.')}</p></section>` : ''}
